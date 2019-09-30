@@ -82,6 +82,7 @@ describe('User', () => {
 
   it('should user update password informing old password correct', async () => {
     const user = await factory.create('User', {
+      email: 'dev1@test.com',
       password: '1234567',
     });
 
@@ -96,6 +97,8 @@ describe('User', () => {
       .put('/users')
       .set('Authorization', `Bearer ${authUser.body.token}`)
       .send({
+        name: user.name,
+        email: user.email,
         oldPassword: '1234567',
         password: '19919191',
         confirmPassword: '19919191',
@@ -120,6 +123,8 @@ describe('User', () => {
       .put('/users')
       .set('Authorization', `Bearer ${authUser.body.token}`)
       .send({
+        name: user.name,
+        email: user.email,
         oldPassword: '12341234',
         password: '19919191',
         confirmPassword: '19919191',
@@ -158,5 +163,29 @@ describe('User', () => {
       .set('Authorization', `Bearer 12a123`);
 
     expect(response.status).toBe(401);
+  });
+
+  it('should not upgrade case not inform fields correct', async () => {
+    const user = await factory.create('User', {
+      password: '1234567',
+    });
+
+    const authUser = await request(app)
+      .post('/sessions')
+      .send({
+        email: user.email,
+        password: user.password,
+      });
+
+    const response = await request(app)
+      .put('/users')
+      .set('Authorization', `Bearer ${authUser.body.token}`)
+      .send({
+        name: user.name,
+        email: user.email,
+        password: '19919191',
+      });
+
+    expect(response.status).toBe(400);
   });
 });

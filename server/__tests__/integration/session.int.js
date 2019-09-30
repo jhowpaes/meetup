@@ -10,7 +10,7 @@ describe('Authentication', () => {
   });
 
   it('should authenticate with valid credentials', async () => {
-    await factory.create('User', {
+    const user = await factory.create('User', {
       email: 'ok@test.com',
       password: '1234567',
     });
@@ -18,8 +18,8 @@ describe('Authentication', () => {
     const response = await request(app)
       .post('/sessions')
       .send({
-        email: 'ok@test.com',
-        password: '1234567',
+        email: user.email,
+        password: user.password,
       });
 
     expect(response.status).toBe(200);
@@ -36,6 +36,18 @@ describe('Authentication', () => {
       });
 
     expect(response.status).toBe(401);
+  });
+
+  it('it should not login case not inform fields correct', async () => {
+    const user = await factory.create('User');
+
+    const response = await request(app)
+      .post('/sessions')
+      .send({
+        email: user.email,
+      });
+
+    expect(response.status).toBe(400);
   });
 
   it('should user typed password not equals registered', async () => {
