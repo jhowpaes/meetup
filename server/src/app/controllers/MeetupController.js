@@ -59,10 +59,10 @@ class MeetupController {
 
   async update(req, res) {
     const schema = Yup.object().shape({
-      title: Yup.string().required(),
-      description: Yup.string().required(),
-      localization: Yup.string().required(),
-      date: Yup.date().required(),
+      title: Yup.string(),
+      description: Yup.string(),
+      localization: Yup.string(),
+      date: Yup.date(),
     });
 
     if (!(await schema.isValid(req.body))) {
