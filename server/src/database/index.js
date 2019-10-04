@@ -1,13 +1,13 @@
 import Sequelize from 'sequelize';
 
-import databaseConfig from '../config/database';
-
 import User from '../app/models/User';
 import File from '../app/models/File';
 import Meetup from '../app/models/Meetup';
-import UserMeetup from '../app/models/UserMeetup';
+import Subscription from '../app/models/Subscription';
 
-const models = [User, File, Meetup, UserMeetup];
+import databaseConfig from '../config/database';
+
+const models = [User, File, Meetup, Subscription];
 
 class Database {
   constructor() {
