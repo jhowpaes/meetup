@@ -24,10 +24,7 @@ class User extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.Meetup, {
-      through: models.UserMeetup,
-      as: 'meetups',
-    });
+    this.hasMany(models.Meetup, { as: 'meetups' });
   }
 
   checkPassword(password) {
