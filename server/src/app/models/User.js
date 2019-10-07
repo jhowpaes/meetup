@@ -24,8 +24,8 @@ class User extends Model {
   }
 
   static associate(models) {
-    this.hasMany(models.Meetup, { as: 'meetup' });
-    this.hasMany(models.Subscription, { as: 'subscription' });
+    this.hasMany(models.Meetup);
+    this.hasMany(models.Subscription);
   }
 
   checkPassword(password) {
