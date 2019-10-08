@@ -23,7 +23,7 @@ class MeetupController {
       where,
       attributes: ['title', 'description', 'localization', 'date'],
       include: [
-        { model: File, as: 'banner', attributes: ['name', 'path', 'url'] },
+        { model: File, as: 'banner', attributes: ['id', 'path', 'url'] },
         { model: User, as: 'user', attributes: ['name', 'email'] },
       ],
       limit: 10,
