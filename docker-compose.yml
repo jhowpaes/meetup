@@ -1,0 +1,39 @@
+version: "3"
+
+services:
+  meetapp-server:
+    build: ./server
+    container_name: meetapp-server
+    volumes:
+      - ./server:/home/server
+      - /home/server/node_modules
+    ports:
+      - "3333:3333"
+    command: sh -c "yarn sequelize db:migrate && yarn start"
+    depends_on:
+      - meetapp-postgres
+      - meetapp-redis
+
+  # meetapp-web:
+  # meetapp-mobile:
+  meetapp-postgres:
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: "docker"
+      POSTGRES_USER: "docker"
+      POSTGRES_DB: "meetapp"
+    ports:
+      - "5432:5432"
+    volumes:
+      - meetapp-pg-data:/var/lib/postgresql/data
+
+  meetapp-redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - meetapp_redis-data:/data
+
+volumes:
+  meetapp-pg-data:
+  meetapp_redis-data:
