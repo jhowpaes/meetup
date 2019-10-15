@@ -10,6 +10,7 @@ module.exports = {
     SharedArrayBuffer: 'readonly',
     __DEV__: true,
   },
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -17,15 +18,14 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', 'import', 'react-hooks', 'prettier'],
+  plugins: ['react', 'react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
     'import/prefer-default-export': 'off',
-    'react/state-in-constructor': 'off',
-    'react/static-property-placement': 'off',
     'no-unused-vars': ['error', { argsIgnorePattern: '^_' }],
     'react/jsx-one-expression-per-line': 'off',
+    'react/jsx-props-no-spreading': 'off',
     'global-require': 'off',
     'react-native/no-raw-text': 'off',
     'no-param-reassign': 'off',
