@@ -1,15 +1,23 @@
 import styled from 'styled-components';
 import { darken } from 'polished';
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  aside {
+    display: flex;
+    align-items: center;
+  }
+`;
 
 export const ButtonEdit = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   height: 42px;
   width: 116px;
   background: #4dbaf9;
   font-weight: bold;
   color: #fff;
-  border: 0;
+  border: none;
   border-radius: 4px;
   font-size: 16px;
   transition: background 0.2s;
@@ -18,16 +26,23 @@ export const ButtonEdit = styled.button`
   &:hover {
     background: ${darken(0.05, '#4dbaf9')};
   }
+
+  svg {
+    margin-right: 15px;
+  }
 `;
 
 export const ButtonCancel = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
   margin-left: 10px;
   height: 42px;
   width: 116px;
   background: #f94d6a;
   font-weight: bold;
   color: #fff;
-  border: 0;
+  border: none;
   border-radius: 4px;
   font-size: 16px;
   transition: background 0.2s;
@@ -53,14 +68,25 @@ export const MeetupDetail = styled.div`
     color: #fff;
   }
 `;
+
 export const MeetupFooter = styled.div`
-  font-size: 16px;
-  font-weight: normal;
-  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
   margin-top: 30px;
   opacity: 0.6;
 
   span {
-    margin-right: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 16px;
+    font-weight: normal;
+    color: #fff;
+    margin-right: 16px;
+
+    svg {
+      margin-right: 15px;
+    }
   }
 `;

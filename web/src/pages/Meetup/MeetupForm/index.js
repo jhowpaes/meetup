@@ -61,7 +61,7 @@ export default function MeetupForm({ meetup, edit }) {
         <Input name="localization" placeholder="Meetup Localization" />
         <FormButton type="submit">
           <MdAddCircleOutline size={20} color="#fff" />
-          Save
+          Save Meetup
         </FormButton>
       </Form>
     </Container>

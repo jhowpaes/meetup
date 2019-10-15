@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { format, parseISO, toDate } from 'date-fns';
 import pt from 'date-fns/locale/pt';
+import { MdAddCircleOutline, MdChevronRight } from 'react-icons/md';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -45,6 +46,7 @@ export default function Dashboard() {
       <header>
         <h1>My meetups</h1>
         <button type="button" onClick={() => handleNew()}>
+          <MdAddCircleOutline size={20} color="#FFF" />
           New meetup
         </button>
       </header>
@@ -60,7 +62,10 @@ export default function Dashboard() {
             >
               <li>
                 <h3>{meetup.title}</h3>
-                <span>{meetup.dateFormatted}</span>
+                <div>
+                  <span>{meetup.dateFormatted}</span>
+                  <MdChevronRight size={24} color="#999" />
+                </div>
               </li>
             </MeetupButton>
           ))

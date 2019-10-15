@@ -51,9 +51,9 @@ export const FormButton = styled.button`
   align-self: flex-end;
   justify-content: space-evenly;
   background: #f94d6a;
-  height: 50px;
   color: #fff;
-  border: 0;
+  border: none;
+  height: 50px;
   width: 180px;
   border-radius: 4px;
   transition: background 0.2s;

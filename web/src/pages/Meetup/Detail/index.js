@@ -1,6 +1,7 @@
 import React from 'react';
 import Proptypes from 'prop-types';
 import { toast } from 'react-toastify';
+import { MdEdit, MdDeleteForever, MdEvent, MdPlace } from 'react-icons/md';
 
 import api from '~/services/api';
 import history from '~/services/history';
@@ -39,6 +40,7 @@ export default function Detail({ meetup }) {
             type="button"
             onClick={() => handleEdit()}
           >
+            <MdEdit size={20} color="#FFF" />
             Edit
           </ButtonEdit>
           <ButtonCancel
@@ -46,6 +48,7 @@ export default function Detail({ meetup }) {
             type="button"
             onClick={() => handleCancel()}
           >
+            <MdDeleteForever size={20} color="#FFF" />
             Cancel
           </ButtonCancel>
         </aside>
@@ -55,8 +58,14 @@ export default function Detail({ meetup }) {
         <p>{meetup.description}</p>
       </MeetupDetail>
       <MeetupFooter>
-        <span>{meetup.dateFormatted}</span>
-        <span>{meetup.localization}</span>
+        <span>
+          <MdEvent size={20} color="#999" />
+          {meetup.dateFormatted}
+        </span>
+        <span>
+          <MdPlace size={20} color="#999" />
+          {meetup.localization}
+        </span>
       </MeetupFooter>
     </Container>
   );

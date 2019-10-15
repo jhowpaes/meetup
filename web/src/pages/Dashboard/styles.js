@@ -20,13 +20,16 @@ export const Container = styled.div`
     }
 
     button {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
       margin: 5px 0 0;
       height: 42px;
       width: 162px;
       background: #f94d6a;
       font-weight: bold;
       color: #fff;
-      border: 0;
+      border: none;
       border-radius: 4px;
       font-size: 16px;
       transition: background 0.2s;
@@ -54,21 +57,27 @@ export const MeetupButton = styled.button`
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
 
-  h3 {
-    font-size: 18px;
-    font-weight: bold;
-    color: #fff;
-  }
+    h3 {
+      font-size: 18px;
+      font-weight: bold;
+      color: #fff;
+    }
 
-  span {
-    font-weight: normal;
-    font-size: 16px;
-    margin-right: 50px;
-    text-align: right;
-    color: #fff;
-    opacity: 0.6;
+    div {
+      display: flex;
+      align-items: center;
+
+      span {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+        font-size: 16px;
+        color: #fff;
+        opacity: 0.6;
+        margin-right: 30px;
+      }
+    }
   }
 `;
 
