@@ -18,7 +18,7 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['react', 'react-hooks', 'prettier'],
+  plugins: ['react', 'jsx-ally', 'import', 'react-hooks', 'prettier'],
   rules: {
     'prettier/prettier': 'error',
     'react/jsx-filename-extension': ['error', { extensions: ['.js', '.jsx'] }],
