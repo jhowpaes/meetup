@@ -63,7 +63,7 @@ function Dashboard({ isFocused }) {
     try {
       setLoading(true);
       const response = await api.get('meetups', {
-        params: { page: 1, date: format(date, 'yyyy-MM-dd') },
+        params: { page, date: format(date, 'yyyy-MM-dd') },
       });
 
       const data = response.data.rows;
