@@ -29,7 +29,7 @@ export default function Meetup({ data, loading, isDashboard, onSubmit }) {
             source={{
               uri: data.banner
                 ? data.banner.url
-                : `https://api.adorable.io/avatar/50/${data.name}-${data.id}.png`,
+                : `https://api.adorable.io/avatar/50/${data.date}.png`,
             }}
           />
           <Details>
