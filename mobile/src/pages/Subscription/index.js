@@ -72,7 +72,7 @@ function Subscription({ isFocused }) {
             renderItem={({ item }) => (
               <Meetup
                 loading={loading}
-                onSubmit={() => handleUnsubscribe(item.id)}
+                onSubmit={() => handleUnsubscribe(item.meetup_id)}
                 data={item.Meetup}
               />
             )}
