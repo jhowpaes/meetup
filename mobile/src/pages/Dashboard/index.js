@@ -44,7 +44,7 @@ function Dashboard({ isFocused }) {
           loading: meetup.id === id,
         }))
       );
-      await api.post(`subscriptions/${id}`);
+      await api.post(`meetups/${id}/subscriptions`);
 
       Alert.alert('Success', 'Registration done');
     } catch (err) {
@@ -63,7 +63,7 @@ function Dashboard({ isFocused }) {
     try {
       setLoading(true);
       const response = await api.get('meetups', {
-        params: { page, date: format(date, 'yyyy-MM-dd') },
+        params: { page: 1, date: format(date, 'yyyy-MM-dd') },
       });
 
       const data = response.data.rows;
