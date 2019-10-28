@@ -63,15 +63,13 @@ cd mobile
 # Install the dependencies
 yarn install
 
-# Start the metro bundler
-yarn start
-
 # Install the app
 react-native run-android
 
-# Start the app
-react-native start our react-native start --reset-cache
+# Start the metro bundler
+react-native start or react-native start --reset-cache
 
 ```
+
 
 Made with much :purple_heart: and :muscle: by Jhow Paes :blush: <a href="https://www.linkedin.com/in/jhowpaes/">Talk to me!</a>
