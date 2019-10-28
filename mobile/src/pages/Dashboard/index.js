@@ -66,9 +66,9 @@ function Dashboard({ isFocused }) {
         params: { page, date: format(date, 'yyyy-MM-dd') },
       });
 
-      const data = response.data.rows;
+      const { data } = response;
 
-      const totalMeetups = await response.data.count;
+      const totalMeetups = await response.data.lenght;
 
       setTotal(Math.ceil(totalMeetups / perPage));
       setMeetups(page >= 2 ? [...meetups, ...data] : data);

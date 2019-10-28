@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { ActivityIndicator, Alert } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import { withNavigationFocus } from 'react-navigation';
+import PropTypes from 'prop-types';
 
 import api from '~/services/api';
 
@@ -95,6 +96,10 @@ Subscription.navigationOptions = {
   tabBarIcon: ({ tintColor }) => (
     <Icon name="local-offer" size={22} color={tintColor} />
   ),
+};
+
+Subscription.propTypes = {
+  isFocused: PropTypes.bool.isRequired,
 };
 
 export default withNavigationFocus(Subscription);
