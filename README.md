@@ -70,8 +70,9 @@ yarn start
 react-native run-android
 
 # Start the app
-react-native start our react-native start --reset-cache
+react-native start or react-native start --reset-cache
 
 ```
+
 
 Made with much :purple_heart: and :muscle: by Jhow Paes :blush: <a href="https://www.linkedin.com/in/jhowpaes/">Talk to me!</a>
