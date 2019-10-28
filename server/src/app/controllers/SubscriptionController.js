@@ -102,6 +102,27 @@ class SubscriptionController {
 
     return res.json(subscription);
   }
+
+  async destroy(req, res) {
+    const { meetupId } = req.params;
+
+    const subscription = await Subscription.findOne({
+      where: {
+        user_id: req.userId,
+        meetup_id: meetupId,
+      },
+    });
+
+    if (!subscription) {
+      return res
+        .status(401)
+        .json({ error: 'You are not subscribed to this meetup.' });
+    }
+
+    await subscription.destroy();
+
+    return res.send();
+  }
 }
 
 export default new SubscriptionController();
