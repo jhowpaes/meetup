@@ -10,6 +10,7 @@ Redis and Postgress database.
 - web
   - run yarn start
 - mobile
+  - run react-native run-android
   - run react-native start
 
 ## not tested on IOS
